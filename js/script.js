@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function HideTabsContent() {
         tabsContent.forEach((item) => {
-            item.style.display = 'none';
+            item.classList.add('hide');
+            item.classList.remove('show');
         });
         
         tabs.forEach((item) => {
@@ -17,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function ShowTabsContent(i){
-        tabsContent[i].style.display = 'block';
+        tabsContent[i].classList.add('show');
+        tabsContent[i].classList.remove('hide');
 
         tabs[i].classList.add('tabheader__item_active');
 
