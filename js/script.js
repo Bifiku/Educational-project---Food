@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     ShowTabsContent(i);
                 }
             });
-        }g
+        }
 
-    });
+    }); 
     
 
 
