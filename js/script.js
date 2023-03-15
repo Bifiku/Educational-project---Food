@@ -43,14 +43,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }); 
     
     // TIMER
-    const deadline = '2023-03-14';
+    const deadline = '2023-08-14';
 
     function getTimeRemaping(endTime) {
-        let t = Date.parse(endTime) - Date.now(),
+        let days, hours, minutes, seconds;
+        const t = Date.parse(endTime) - Date.now();
+
+        if(t <= 0){
+            days = 0;
+            hours = 0;
+            minutes = 0;
+            seconds = 0;
+        } else {
             days = Math.floor(t / (1000 * 60 * 60 * 24)),
             hours = Math.floor(t / (1000 * 60 * 60) % 24),
             minutes = Math.floor(t / (1000 * 60) % 60),
             seconds = Math.floor(t / 1000 % 60);
+        }
 
         return {
             'total': t,
